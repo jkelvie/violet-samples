@@ -1,0 +1,71 @@
+{
+    "languageModel": {
+        "intents": [{
+            "name": "closeSession",
+            "samples": ["I am good", "No I am good", "Thanks", "Thank you"]
+        }, {
+            "name": "launch",
+            "samples": ["What can you do"]
+        }, {
+            "name": "node-0_1",
+            "samples": ["Split {billAmt} among {numPeople} people"],
+            "slots": [{
+                "name": "billAmt",
+                "type": "NUMBER",
+                "samples": []
+            }, {
+                "name": "numPeople",
+                "type": "NUMBER",
+                "samples": []
+            }]
+        }, {
+            "name": "node-0_2",
+            "samples": ["How much is tip on a bill of {billAmt} dollars", "How much is tip on {billAmt} dollars", "How much is tip on a bill of {billAmt} ", "How much is tip on {billAmt} "],
+            "slots": [{
+                "name": "billAmt",
+                "type": "NUMBER",
+                "samples": []
+            }]
+        }, {
+            "name": "mortgage",
+            "samples": ["How many payments on my mortgage"]
+        }, {
+            "name": "node-0_2_1_1",
+            "samples": ["standard tip", "yes"]
+        }, {
+            "name": "node-0_2_1_2",
+            "samples": ["{percentageAmt} percent tip"],
+            "slots": [{
+                "name": "percentageAmt",
+                "type": "NUMBER",
+                "samples": []
+            }]
+        }, {
+            "name": "node-0_3_1",
+            "samples": ["I owe the bank {principalAmt} dollars", "I owe the bank {principalAmt} ", "The principal is {principalAmt} dollars", "The principal is {principalAmt} "],
+            "slots": [{
+                "name": "principalAmt",
+                "type": "NUMBER",
+                "samples": []
+            }]
+        }, {
+            "name": "node-0_3_2",
+            "samples": ["Interest rate is {percentageAmt} percent", " {percentageAmt} percent"],
+            "slots": [{
+                "name": "percentageAmt",
+                "type": "NUMBER",
+                "samples": []
+            }]
+        }, {
+            "name": "node-0_3_3",
+            "samples": ["Every month {paymentAmt} dollars", "I typically pay {paymentAmt} dollars"],
+            "slots": [{
+                "name": "paymentAmt",
+                "type": "NUMBER",
+                "samples": []
+            }]
+        }],
+        "types": [],
+        "invocationName": "finance calculator"
+    }
+}
