@@ -3,10 +3,9 @@
     "skillURL": "http://localhost:8080/alexa",
     "trace": false,
     "jest": {
-      "silent": "true",
-      "coveragePathIgnorePatterns": [
-        "<rootDir>/lambda/data",
-        "<rootDir>/lambda/custom/.*cook.*"
+      "silent": true,
+      "collectCoverageFrom": [
+        "<rootDir>/scripts/financeCalculator*"
       ]
     }
   }

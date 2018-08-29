@@ -8,9 +8,8 @@
 # Created by Bespoken
 # Learn more at https://read.bespoken.io/unit-testing/getting-started/
 #
-# Skill name: "Space Facts" by Amazon
-# Test scope: LaunchRequest, GetNewFactIntent, AMAZON.HelpIntent, AMAZON.StopIntent, AMAZON.CancelIntent,
-#             AMAZON.FallbackIntent
+# Skill name: "Finance Calculator" by Salesforce
+# Test scope: LaunchRequest, launch, mortgage, splitting the bill, tip calculation & closeSession intents
 # Description: General test suite for all intents
 #=====================================================================================================================
 
@@ -21,4 +20,109 @@ configuration:
 ---
 - test: Launch request, no further interaction.
 - LaunchRequest: # LaunchRequest is not an utterance but a request type and reserved word
-  - response.outputSpeech.ssml: "*"
+  - response.outputSpeech.ssml:
+    - Yes. How can I help?
+    - Yup. I am here.
+    - Hey. Need me?
+  - response.shouldEndSession: false
+- SessionEndedRequest
+
+---
+- test: launch intent (getting help)
+- LaunchRequest
+- launch:
+  - response.outputSpeech.ssml: I can help you split a bill, calculate tips, or calculate number of payments on your mortgage
+  - response.shouldEndSession: false
+- SessionEndedRequest
+
+---
+- test: node-0_1 (split the bill) intent with a utterance
+- LaunchRequest
+- "split 177 among 4 people":
+  - intent: "node-0_1"
+    billAmt: 177
+    numPeople: 4
+  - prompt: Splitting 177 4 ways gives 44.25
+  - sessionAttributes.billAmt: 177
+  - sessionAttributes.numPeople: 4
+  - response.shouldEndSession: false
+- SessionEndedRequest
+
+---
+- test: node-0_2 (giving tip, standard percentage) intent
+- LaunchRequest
+- "how much is tip on a bill of 271 dollars":
+  - intent: "node-0_2"
+    billAmt: 271
+  - prompt: Are you thinking of a standard tip of 15 percent or some other amount?
+  - sessionAttributes.billAmt: 271
+  - response.shouldEndSession: false
+- "standard tip":
+  - intent: "node-0_2_1_1"
+  - prompt: 15 percent tip on 271 is 311.65
+  - response.shouldEndSession: false
+- SessionEndedRequest
+
+---
+- test: node-0_2 (giving tip, non standard percentage) intent
+- LaunchRequest
+- "how much is tip on a bill of 271 dollars":
+  - intent: "node-0_2"
+    billAmt: 271
+  - prompt: Are you thinking of a standard tip of 15 percent or some other amount?
+  - sessionAttributes.billAmt: 271
+  - response.shouldEndSession: false
+- "17% percent tip":
+  - intent: "node-0_2_1_2"
+    percentageAmt: 17%
+  - prompt: 17% percent tip on 271 is 317.07
+  - sessionAttributes.percentageAmt: 17%
+  - response.shouldEndSession: false
+- SessionEndedRequest
+
+---
+- test: mortage (node-0_3) and closeSession intents
+- LaunchRequest
+- "how many payments on my mortgage":
+  - intent: "mortgage"
+  - prompt: What is the mortgage amount?
+  - response.shouldEndSession: false
+- "i owe the bank 375000":
+  - intent: "node-0_3_1"
+    principalAmt: 375000
+  - prompt: What is the interest rate?
+  - sessionAttributes.principalAmt: 375000
+  - response.shouldEndSession: false
+- "18 percent":
+  - intent: "node-0_3_2"
+    percentageAmt: 18
+  - prompt: How large a payment do you typically make?
+  - sessionAttributes.percentageAmt: 18
+  - response.shouldEndSession: false
+- "i typically pay 800 dollars":
+  - intent: "node-0_3_3"
+    paymentAmt: 800
+  - prompt: You would need NaN payments for a 375000 dollar principal with 800 dollar payment amount
+  - sessionAttributes.paymentAmt: 800
+  - response.shouldEndSession: false
+- closeSession:
+  - response.shouldEndSession: true
+
+
+#---
+#- test.only: node-0_2 (giving tip) intent
+#- LaunchRequest
+#- node-0_2 billAmt=271:
+#  - prompt: Are you thinking of a standard tip of 15 percent or some other amount?
+#  - sessionAttributes.billAmt: 271
+#  - response.shouldEndSession: false
+#- node-0_2_1_2 percentageAmt=17%:
+#  - prompt: 17% percent tip on 271 is 317.07
+#  - sessionAttributes.percentageAmt: 17%
+#  - response.shouldEndSession: false
+#- SessionEndedRequest
+
+# ToDo:
+# - Use succinct syntax when calling intent with slots
+# - Do not use code coverage unless we figure it out a way to execute violet scripts w/o running their server
+# - Mortgage calculator is not working properly, it is returning NaN instead of the # of payments
