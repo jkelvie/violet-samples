@@ -1,0 +1,8 @@
+{
+    "skillURL": "http://localhost:8080/alexa",
+    "trace": false,
+    "jest": {
+      "collectCoverage": false,
+      "silent": false
+    }
+}
