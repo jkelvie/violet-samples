@@ -1,14 +1,16 @@
 # Steps to run unit test scripts for Violet Samples with Bespoken
-1. Install the dependencies for the project:  
+1. Open a terminal window and `cd` to the project
+
+2. Install the dependencies for the project:  
 `npm install`
 
-2. Install the Bespoken CLI:  
+3. Install the Bespoken CLI:  
 `npm install bespoken-tools -g`
 
-3. Start the Violet server with `node scripts/<SCRIPT_NAME>.js` (within one terminal window)  
+4. Start the Violet server with `node scripts/<SCRIPT_NAME>.js` (within one terminal window)  
 For example, to run the finance calculator, run `node scripts/financeCalculator.js`
 
-4. Run `bst test` (within a separate terminal window)  
+5. Run `bst test` (within a separate terminal window)  
 The output should look like this:
 ```console
 λ bst test
