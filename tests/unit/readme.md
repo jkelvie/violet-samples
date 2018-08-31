@@ -8,7 +8,8 @@
 3. Start the Violet server with `node scripts/<SCRIPT_NAME>.js` (within one terminal window)  
 For example, to run the finance calculator, run `node scripts/financeCalculator.js`
 
-4. Run `bst test` (within a separate terminal window) - the output should look like this:
+4. Run `bst test` (within a separate terminal window)  
+The output should look like this:
 ```console
 λ bst test
 
