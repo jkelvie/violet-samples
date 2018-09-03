@@ -28,7 +28,7 @@ configuration:
 - SessionEndedRequest
 
 ---
-- test: launch intent (getting help)
+- test: Launch intent (getting help)
 - LaunchRequest
 - launch:
   - response.outputSpeech.ssml: I can help you split a bill, calculate tips, or calculate number of payments on your mortgage
@@ -36,9 +36,9 @@ configuration:
 - SessionEndedRequest
 
 ---
-- test: node-0_1 (split the bill) intent with a utterance
+- test: Split the bill (node-0_1) intent with a utterance
 - LaunchRequest
-- "split 177 among 4 people":
+- "Split 177 among 4 people":
   - intent: "node-0_1"
     billAmt: 177
     numPeople: 4
@@ -49,24 +49,24 @@ configuration:
 - SessionEndedRequest
 
 ---
-- test: node-0_2 (giving tip, standard percentage) intent
+- test: Giving tip, standard percentage (node-0_2) intent
 - LaunchRequest
-- "how much is tip on a bill of 271 dollars":
+- "How much is tip on a bill of 271 dollars":
   - intent: "node-0_2"
     billAmt: 271
   - prompt: Are you thinking of a standard tip of 15 percent or some other amount?
   - sessionAttributes.billAmt: 271
   - response.shouldEndSession: false
-- "standard tip":
+- "Standard tip":
   - intent: "node-0_2_1_1"
   - prompt: 15 percent tip on 271 is 311.65
   - response.shouldEndSession: false
 - SessionEndedRequest
 
 ---
-- test: node-0_2 (giving tip, non standard percentage) intent
+- test: Giving tip, non standard percentage (node-0_2) intent
 - LaunchRequest
-- "how much is tip on a bill of 271 dollars":
+- "How much is tip on a bill of 271 dollars":
   - intent: "node-0_2"
     billAmt: 271
   - prompt: Are you thinking of a standard tip of 15 percent or some other amount?
@@ -81,13 +81,13 @@ configuration:
 - SessionEndedRequest
 
 ---
-- test: mortage (node-0_3) and closeSession intents
+- test: Mortgage (node-0_3) and closeSession intents
 - LaunchRequest
-- "how many payments on my mortgage":
+- "How many payments on my mortgage":
   - intent: "mortgage"
   - prompt: What is the mortgage amount?
   - response.shouldEndSession: false
-- "i owe the bank 375000":
+- "I owe the bank 375000":
   - intent: "node-0_3_1"
     principalAmt: 375000
   - prompt: What is the interest rate?
@@ -99,7 +99,7 @@ configuration:
   - prompt: How large a payment do you typically make?
   - sessionAttributes.percentageAmt: 18
   - response.shouldEndSession: false
-- "i typically pay 800 dollars":
+- "I typically pay 800 dollars":
   - intent: "node-0_3_3"
     paymentAmt: 800
   - prompt: You would need NaN payments for a 375000 dollar principal with 800 dollar payment amount
