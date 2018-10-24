@@ -1,0 +1,30 @@
+[
+  {
+    "data": [
+      {
+        "userDefined": false,
+        "text": "Split "
+      },
+      {
+        "userDefined": false,
+        "alias": "billAmt",
+        "text": "UNKNOWN TYPE"
+      },
+      {
+        "userDefined": false,
+        "text": " among "
+      },
+      {
+        "userDefined": false,
+        "alias": "numPeople",
+        "text": "UNKNOWN TYPE"
+      },
+      {
+        "userDefined": false,
+        "text": " people"
+      }
+    ],
+    "isTemplate": false,
+    "count": 0
+  }
+]

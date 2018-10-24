@@ -1,0 +1,21 @@
+{
+  "name": "node-0_1",
+  "auto": true,
+  "webhookUsed": true,
+  "responses": [
+    {
+      "parameters": [
+        {
+          "isList": false,
+          "name": "billAmt",
+          "value": "$billAmt"
+        },
+        {
+          "isList": false,
+          "name": "numPeople",
+          "value": "$numPeople"
+        }
+      ]
+    }
+  ]
+}

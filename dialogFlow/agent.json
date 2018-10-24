@@ -1,0 +1,7 @@
+{
+  "webhook": {
+    "url": "http://localhost:8080/googleConfig",
+    "available": true
+  },
+  "language": "en"
+}

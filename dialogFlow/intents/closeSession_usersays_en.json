@@ -1,0 +1,42 @@
+[
+  {
+    "data": [
+      {
+        "userDefined": false,
+        "text": "I am good"
+      }
+    ],
+    "isTemplate": false,
+    "count": 0
+  },
+  {
+    "data": [
+      {
+        "userDefined": false,
+        "text": "No I am good"
+      }
+    ],
+    "isTemplate": false,
+    "count": 0
+  },
+  {
+    "data": [
+      {
+        "userDefined": false,
+        "text": "Thanks"
+      }
+    ],
+    "isTemplate": false,
+    "count": 0
+  },
+  {
+    "data": [
+      {
+        "userDefined": false,
+        "text": "Thank you"
+      }
+    ],
+    "isTemplate": false,
+    "count": 0
+  }
+]

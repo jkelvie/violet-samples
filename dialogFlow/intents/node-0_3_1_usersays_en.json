@@ -1,0 +1,50 @@
+[
+  {
+    "data": [
+      {
+        "userDefined": false,
+        "text": "I owe the bank "
+      },
+      {
+        "userDefined": false,
+        "alias": "principalAmt",
+        "text": "UNKNOWN TYPE"
+      },
+      {
+        "userDefined": false,
+        "text": " "
+      },
+      {
+        "userDefined": false,
+        "alias": "",
+        "text": "dollars"
+      }
+    ],
+    "isTemplate": false,
+    "count": 0
+  },
+  {
+    "data": [
+      {
+        "userDefined": false,
+        "text": "The principal is "
+      },
+      {
+        "userDefined": false,
+        "alias": "principalAmt",
+        "text": "UNKNOWN TYPE"
+      },
+      {
+        "userDefined": false,
+        "text": " "
+      },
+      {
+        "userDefined": false,
+        "alias": "",
+        "text": "dollars"
+      }
+    ],
+    "isTemplate": false,
+    "count": 0
+  }
+]

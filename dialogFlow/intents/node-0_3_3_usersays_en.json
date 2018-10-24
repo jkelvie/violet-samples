@@ -1,0 +1,26 @@
+[
+  {
+    "data": [
+      {
+        "userDefined": false,
+        "alias": "I typically pay",
+        "text": "Every month"
+      },
+      {
+        "userDefined": false,
+        "text": " "
+      },
+      {
+        "userDefined": false,
+        "alias": "paymentAmt",
+        "text": "UNKNOWN TYPE"
+      },
+      {
+        "userDefined": false,
+        "text": " dollars"
+      }
+    ],
+    "isTemplate": false,
+    "count": 0
+  }
+]

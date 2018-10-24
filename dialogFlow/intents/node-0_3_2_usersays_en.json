@@ -1,0 +1,26 @@
+[
+  {
+    "data": [
+      {
+        "userDefined": false,
+        "alias": "",
+        "text": "Interest rate is"
+      },
+      {
+        "userDefined": false,
+        "text": " "
+      },
+      {
+        "userDefined": false,
+        "alias": "percentageAmt",
+        "text": "UNKNOWN TYPE"
+      },
+      {
+        "userDefined": false,
+        "text": " percent"
+      }
+    ],
+    "isTemplate": false,
+    "count": 0
+  }
+]

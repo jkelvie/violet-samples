@@ -1,0 +1,35 @@
+[
+  {
+    "data": [
+      {
+        "userDefined": false,
+        "text": "How much is tip on "
+      },
+      {
+        "userDefined": false,
+        "alias": "",
+        "text": "a bill of"
+      },
+      {
+        "userDefined": false,
+        "text": " "
+      },
+      {
+        "userDefined": false,
+        "alias": "billAmt",
+        "text": "UNKNOWN TYPE"
+      },
+      {
+        "userDefined": false,
+        "text": " "
+      },
+      {
+        "userDefined": false,
+        "alias": "",
+        "text": "dollars"
+      }
+    ],
+    "isTemplate": false,
+    "count": 0
+  }
+]

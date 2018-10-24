@@ -1,6 +1,7 @@
 {
+    "dialogFlowDirectory": "dialogFlow",
     "skillURL": "http://localhost:8080/alexa",
-    "trace": false,
+    "trace": true,
     "jest": {
       "collectCoverage": false,
       "silent": false

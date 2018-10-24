@@ -1,0 +1,16 @@
+{
+  "name": "node-0_3_3",
+  "auto": true,
+  "webhookUsed": true,
+  "responses": [
+    {
+      "parameters": [
+        {
+          "isList": false,
+          "name": "paymentAmt",
+          "value": "$paymentAmt"
+        }
+      ]
+    }
+  ]
+}
