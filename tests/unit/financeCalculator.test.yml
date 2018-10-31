@@ -18,39 +18,31 @@ configuration:
   locale: en-US
 
 ---
-- test.only: Launch request, no further interaction.
-- LaunchRequest: # LaunchRequest is not an utterance but a request type and reserved word
-  - response.outputSpeech.ssml:
-    - Yes. How can I help?
-    - Yup. I am here.
-    - Hey. Need me?
-  - response.shouldEndSession: false
-- SessionEndedRequest
-
----
-- test: Launch intent (getting help)
+- test: Launch request, no further interaction.
 - LaunchRequest
 - launch:
-  - response.outputSpeech.ssml: I can help you split a bill, calculate tips, or calculate number of payments on your mortgage
+  - prompt: I can help you split a bill, calculate tips, or calculate number of payments on your mortgage
   - response.shouldEndSession: false
-- SessionEndedRequest
+- closeSession
 
 ---
 - test: Split the bill (node-0_1) intent with a utterance
-- LaunchRequest
+- launch
 - "Split 177 among 4 people":
   - intent: "node-0_1"
     billAmt: 177
     numPeople: 4
-  - prompt: Splitting 177 4 ways gives 44.25
+  - prompt:
+      - Splitting 177 4 ways gives 44.25
+      - I split the bill four ways - it's 44.25 per person
   - sessionAttributes.billAmt: 177
   - sessionAttributes.numPeople: 4
-  - response.shouldEndSession: false
-- SessionEndedRequest
+  - shouldEndSession: false
+- closeSession
 
 ---
 - test: Giving tip, standard percentage (node-0_2) intent
-- LaunchRequest
+- launch
 - "How much is tip on a bill of 271 dollars":
   - intent: "node-0_2"
     billAmt: 271
@@ -61,11 +53,11 @@ configuration:
   - intent: "node-0_2_1_1"
   - prompt: 15 percent tip on 271 is 311.65
   - response.shouldEndSession: false
-- SessionEndedRequest
+- closeSession
 
 ---
 - test: Giving tip, non standard percentage (node-0_2) intent
-- LaunchRequest
+- launch
 - "How much is tip on a bill of 271 dollars":
   - intent: "node-0_2"
     billAmt: 271
@@ -78,11 +70,11 @@ configuration:
   - prompt: 17% percent tip on 271 is 317.07
   - sessionAttributes.percentageAmt: 17%
   - response.shouldEndSession: false
-- SessionEndedRequest
+- closeSession
 
 ---
 - test: Mortgage (node-0_3) and closeSession intents
-- LaunchRequest
+- launch
 - "How many payments on my mortgage":
   - intent: "mortgage"
   - prompt: What is the mortgage amount?

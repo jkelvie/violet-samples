@@ -1,7 +1,9 @@
 {
     "dialogFlowDirectory": "dialogFlow",
+    "actionURL": "http://localhost:8080/google",
+    "filter": "tests/unit/filter.js",
     "skillURL": "http://localhost:8080/alexa",
-    "trace": true,
+    "trace": false,
     "jest": {
       "collectCoverage": false,
       "silent": false

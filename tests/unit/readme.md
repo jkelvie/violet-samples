@@ -53,3 +53,6 @@ Snapshots:   0 total
 Time:        1.989s, estimated 2s
 Ran all test suites.
 ```
+
+6. To run the tests for google, simply enter:  
+`bst test --platform google`
